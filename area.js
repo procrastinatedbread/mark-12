@@ -8,10 +8,14 @@ function calculateArea(a, b) {
 }
 
 function calculateAreaFinal() {
-  const areaTriangle = calculateArea(
-    Number(sides[0].value),
-    Number(sides[1].value)
-  );
-  outputEl.innerText = "The area of the triangle is " + areaTriangle;
+  if (sides[0].value <= 0 || sides[1].value <= 0) {
+    outputEl.innerText = "Sides can't be negative or zero";
+  } else {
+    const areaTriangle = calculateArea(
+      Number(sides[0].value),
+      Number(sides[1].value)
+    );
+    outputEl.innerText = "The area of the triangle is " + areaTriangle;
+  }
 }
 areaBtn.addEventListener("click", calculateAreaFinal);
