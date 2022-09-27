@@ -13,10 +13,21 @@ function isTriangle() {
     Number(inputs[1].value),
     Number(inputs[2].value)
   );
-  if (sumOfAngles === 180) {
-    outputEl.innerText = "Yeah, it is a triangle!!!";
+  if (
+    Number(inputs[0].value) &&
+    Number(inputs[1].value) &&
+    Number(inputs[2].value) &&
+    Number(inputs[0].value) > 0 &&
+    Number(inputs[1].value) > 0 &&
+    Number(inputs[2].value) > 0
+  ) {
+    if (sumOfAngles === 180) {
+      outputEl.innerText = "Yeah, it is a triangle!!!";
+    } else {
+      outputEl.innerText = "Nope,unfortunately it is not a triangle:(";
+    }
   } else {
-    outputEl.innerText = "Nope,unfortunately it is not a triangle:(";
+    outputEl.innerText = "There are empty or negative values";
   }
 }
 
